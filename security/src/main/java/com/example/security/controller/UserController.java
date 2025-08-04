@@ -30,21 +30,8 @@ public class UserController {
     }
 
     @GetMapping("/")
-    public List<Map<String, String>> fetchData() {
-        List<Map<String, String>> result = new ArrayList<>();
-
-        Map<String, String> user1 = new HashMap<>();
-        user1.put("name", "John Doe");
-        user1.put("email", "john@example.com");
-
-        Map<String, String> user2 = new HashMap<>();
-        user2.put("name", "Jane Smith");
-        user2.put("email", "jane@example.com");
-
-        result.add(user1);
-        result.add(user2);
-
-        return result;
+    public List<Users> fetchData() {
+        return service.getAllUser();
     }
 
 
